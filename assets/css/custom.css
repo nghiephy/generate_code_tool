@@ -1,0 +1,194 @@
+/*
+ * Copyright (c) 2015
+ * ==================================
+ *
+ *
+ * This is part of an item on themeforest
+ * You can check out the screenshots and purchase it on themeforest:
+ * http://rxa.li/documenter
+ *
+ *
+ * ===========================================
+ * original filename: custom.css
+ * filesize: 1701 Bytes
+ * last modified: Mon, 03 Jun 2013 20:23:47 +0200
+ *
+ */
+
+body {
+   /*background: url(http://static.revaxarts-themes.com/ci_line.gif) repeat-x top center fixed;*/
+   height: 6px;
+}
+
+#documenter_content {
+   background-color: #fff;
+   margin-top: 20px;
+}
+
+#documenter_content div.warning,
+#documenter_content p.warning,
+#documenter_content p.info {
+   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.1);
+   border: 1px solid #D3D6DB;
+}
+
+#documenter_content div.warning,
+#documenter_content p.warning {
+   background-color: #ffd;
+}
+
+#documenter_content p.info {
+   background-color: : #dff;
+}
+
+#documenter_content > section img {
+   max-width: 1600px;
+   -moz-box-shadow: 0px 1px 4px rgba(0,0,0,.2);
+   -webkit-box-shadow: 0px 1px 4px rgba(0,0,0,.2);
+   box-shadow: 0px 1px 4px rgba(0,0,0,.2);
+}
+#documenter_cover {
+   height: auto;
+}
+#documenter_cover img,
+#customer_support img {
+   box-shadow: none !important;
+}
+span.text-info {color: #f00;}
+p.c_1 {
+   background-color: #069;
+   padding: 20px;
+   color: #fff;
+   font-size: 48px;
+}
+
+p.c_2 {
+   background-color: #960;
+   margin: 20px;
+   font-size: 28px;
+   text-align: right;
+   color: #CCC;
+   padding-right: 20px;
+}
+
+p.c_3 {
+   width: 200px;
+   border: 3px solid #090;
+   text-align: center;
+   background: #990;
+   color: #FFF;
+}
+
+p.c_4 {
+   text-align: center;
+   text-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+   border-radius: 5px;
+   -moz-border-radius: 5px;
+   -webkit-border-radius: 5px;
+   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+   -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+   box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+   color: #fef4e9;
+   font-size: 18px;
+   border: solid 1px #4093AE;
+   background: #4093AE;
+   background: -webkit-gradient(linear, left top, left bottom, from(#4093AE), to(#367C94));
+   background: -moz-linear-gradient(top, #4093AE, #367C94);
+   filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#4093AE', endColorstr='#367C94');
+   -ms-filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#4093AE', endColorstr='#367C94');
+}
+
+p.c_5 {
+   text-decoration: blink;
+}
+
+p.c_5:after {
+   content: " Don't use text-decoration:blink in your docs! (added with :after pseudo class)";
+}
+
+p.c_6 {}
+
+p.c_7 {}
+
+p.c_8 {}
+
+p.c_9 {}
+
+.alert h4 {
+   font-size: 16px !important;
+   margin: 10px !important;
+}
+
+.alert ul li {
+   margin-left: 30px !important;
+}
+
+#documenter_content .modal-header h5 {
+   margin: 0;
+}
+
+.highlight-code pre {
+   max-height: 200px;
+   padding: 8px;
+   background-color: #f7f7f9;
+   border: 1px solid #e1e1e8;
+   /*webkit-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+   -moz-box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;
+   box-shadow: inset 40px 0 0 #fbfbfc, inset 41px 0 0 #ececf0;*/
+}
+
+.highlight-code pre code {
+   border: 1px solid #f7f7f7;
+   white-space: pre-wrap;
+}
+
+.container {
+   width: 1024px;
+   margin: 0 auto;
+}
+
+.card {
+   padding: 10px;
+   border: 1px solid #888;
+   border-bottom: 1px solid #888 !important;
+   margin-bottom: 20px !important;
+   overflow: hidden;
+}
+
+.card-header {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.card-header .delete-btns {
+   cursor: pointer;
+   width: auto;
+   padding: 7px 7px 8px;
+   border-radius: 3px;
+   border: 1px solid #ccc;
+   background-color: #dc3545;
+   color: #ffffff;
+}
+
+.modal-content .logo {
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.modal-content .logo img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.modal-content .modal-title {
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+#editor1 {
+    min-height: 400px;
+}
