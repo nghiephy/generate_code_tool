@@ -45,16 +45,70 @@ var layout_container = `
 var layouts = {
     img_left: {
         code: (counter) => {
-            return `&#x9;&#x9;&#x3C;div class=&#x22;layout-img layout-img-left&#x22; data-layout=&#x22;1&#x22;&#x3E;
-&#x9;&#x9;&#x9;&#x3C;div class=&#x22;img-wraper&#x22;&#x3E;
-&#x9;&#x9;&#x9;&#x9;&#x3C;img class=&#x22;img-tag lazyload&#x22; src=&#x22;{{image_${counter}}}&#x22; alt=&#x22;&#x22; title=&#x22;&#x22;/&#x3E;
-&#x9;&#x9;&#x9;&#x3C;/div&#x3E;
-&#x9;&#x9;&#x9;&#x3C;div class=&#x22;content&#x22;&#x3E;
-&#x9;&#x9;&#x9;&#x9;&#x3C;div class=&#x22;content-inner&#x22;&#x3E;
-&#x9;&#x9;&#x9;&#x9;&#x9{{content_richtext_${counter}}}
-&#x9;&#x9;&#x9;&#x9;&#x3C;/div&#x3E;
-&#x9;&#x9;&#x9;&#x3C;/div&#x3E;
-&#x9;&#x9;&#x3C;/div&#x3E;`;
+            return `
+            &#x3C;div class=&#x22;tab-content&#x22; id=&#x22;tab-materials&#x22;&#x3E;
+                &#x3C;div class=&#x22;tab__divider&#x22;&#x3E;&#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;toggle-title&#x22;&#x3E;
+                    &#x3C;a class=&#x22;toggleLink&#x22; data-collapsible=&#x22;&#x22; href=&#x22;#tab-materials-mobile&#x22; aria-label=&#x22;Materials&#x22; aria-controls=&#x22;tab-materials-mobile&#x22; aria-expanded=&#x22;false&#x22;&#x3E;
+                        &#x3C;span class=&#x22;text&#x22;&#x3E;
+                            Materials
+                            &#x3C;/span&#x3E;
+                        &#x3C;span class=&#x22;icon-plus&#x22;&#x3E;&#x26;nbsp;&#x3C;/span&#x3E;
+                    &#x3C;/a&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;toggle-content&#x22; id=&#x22;tab-materials-mobile&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+                    {{image_${counter}}}
+                &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;tab-content&#x22; id=&#x22;tab-availability&#x22;&#x3E;
+                &#x3C;div class=&#x22;tab__divider&#x22;&#x3E;&#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;toggle-title&#x22;&#x3E;
+                    &#x3C;a class=&#x22;toggleLink&#x22; data-collapsible=&#x22;&#x22; href=&#x22;#tab-availability-mobile&#x22; aria-label=&#x22;Availability&#x22; aria-controls=&#x22;tab-availability-mobile&#x22; aria-expanded=&#x22;false&#x22;&#x3E;
+                        &#x3C;span class=&#x22;text&#x22;&#x3E;Availability&#x3C;/span&#x3E;
+                        &#x3C;span class=&#x22;icon-plus&#x22;&#x3E;&#x26;nbsp;&#x3C;/span&#x3E;
+                    &#x3C;/a&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;toggle-content&#x22; id=&#x22;tab-availability-mobile&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+                    {{content_richtext_${counter}}}
+                &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;tab-content&#x22; id=&#x22;tab-compatibility&#x22;&#x3E;
+                &#x3C;div class=&#x22;tab__divider&#x22;&#x3E;&#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;toggle-title&#x22;&#x3E;
+                    &#x3C;a class=&#x22;toggleLink&#x22; data-collapsible=&#x22;&#x22; href=&#x22;#tab-compatibility-mobile&#x22; aria-label=&#x22;Compatibility&#x22; aria-controls=&#x22;tab-compatibility-mobile&#x22; aria-expanded=&#x22;false&#x22;&#x3E;
+                        &#x3C;span class=&#x22;text&#x22;&#x3E;Compatibility&#x3C;/span&#x3E;
+                        &#x3C;span class=&#x22;icon-plus&#x22;&#x3E;&#x26;nbsp;&#x3C;/span&#x3E;
+                    &#x3C;/a&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;toggle-content&#x22; id=&#x22;tab-compatibility-mobile&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+                    &#x3C;ul data-rte-list=&#x22;default&#x22;&#x3E;&#x3C;li&#x3E;&#x3C;p class=&#x22;&#x22; style=&#x22;white-space:pre-wrap;&#x22;&#x3E;Aerobar Two is bike-specific&#x3C;/p&#x3E;&#x3C;/li&#x3E;&#x3C;li&#x3E;&#x3C;p class=&#x22;&#x22; style=&#x22;white-space:pre-wrap;&#x22;&#x3E;For more details,&#x3C;a href=&#x22;https://drive.google.com/file/d/1E_DsUNvBLLnkQB5SkeM2tTzUmbQkyv02/view&#x22;&#x3E;&#x3C;/a&#x3E;&#x3C;/p&#x3E;&#x3C;/li&#x3E;&#x3C;/ul&#x3E;
+                &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;tab-content&#x22; id=&#x22;tab-pricing&#x22;&#x3E;
+                &#x3C;div class=&#x22;tab__divider&#x22;&#x3E;&#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;toggle-title&#x22;&#x3E;
+                    &#x3C;a class=&#x22;toggleLink&#x22; data-collapsible=&#x22;&#x22; href=&#x22;#tab-pricing-mobile&#x22; aria-label=&#x22;Pricing&#x22; aria-controls=&#x22;tab-pricing-mobile&#x22; aria-expanded=&#x22;false&#x22;&#x3E;
+                        &#x3C;span class=&#x22;text&#x22;&#x3E;Pricing&#x3C;/span&#x3E;
+                        &#x3C;span class=&#x22;icon-plus&#x22;&#x3E;&#x26;nbsp;&#x3C;/span&#x3E;
+                    &#x3C;/a&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;toggle-content&#x22; id=&#x22;tab-pricing-mobile&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+                    &#x3C;ul data-rte-list=&#x22;default&#x22;&#x3E;&#x3C;li&#x3E;&#x3C;p class=&#x22;&#x22; style=&#x22;white-space:pre-wrap;&#x22;&#x3E;6061 T6 aluminium extensions, shot peened and black anodised finish&#x3C;/p&#x3E;&#x3C;/li&#x3E;&#x3C;li&#x3E;&#x3C;p class=&#x22;&#x22; style=&#x22;white-space:pre-wrap;&#x22;&#x3E;6061 T6 aluminium extension clamps, CNC machined with black anodised finish&#x3C;/p&#x3E;&#x3C;/li&#x3E;&#x3C;li&#x3E;&#x3C;p class=&#x22;&#x22; style=&#x22;white-space:pre-wrap;&#x22;&#x3E;Injection molded arm cups, with press molded EVA foam pads&#x3C;/p&#x3E;&#x3C;/li&#x3E;&#x3C;li&#x3E;&#x3C;p class=&#x22;&#x22; style=&#x22;white-space:pre-wrap;&#x22;&#x3E;6061 T6 aluminium mounting components (Fit Kit), CNC machined with black anodised finish&#x3C;/p&#x3E;&#x3C;/li&#x3E;&#x3C;/ul&#x3E;
+                &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;tab-content&#x22; id=&#x22;tab-delivery&#x22;&#x3E;
+                &#x3C;div class=&#x22;tab__divider&#x22;&#x3E;&#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;toggle-title&#x22;&#x3E;
+                    &#x3C;a class=&#x22;toggleLink&#x22; data-collapsible=&#x22;&#x22; href=&#x22;#tab-delivery-mobile&#x22; aria-label=&#x22;Delivery&#x22; aria-controls=&#x22;tab-delivery-mobile&#x22; aria-expanded=&#x22;false&#x22;&#x3E;
+                        &#x3C;span class=&#x22;text&#x22;&#x3E;Delivery&#x3C;/span&#x3E;
+                        &#x3C;span class=&#x22;icon-plus&#x22;&#x3E;&#x26;nbsp;&#x3C;/span&#x3E;
+                    &#x3C;/a&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;toggle-content&#x22; id=&#x22;tab-delivery-mobile&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+                    &#x3C;ul data-rte-list=&#x22;default&#x22;&#x3E;&#x3C;li&#x3E;&#x3C;p class=&#x22;&#x22; style=&#x22;white-space:pre-wrap;&#x22;&#x3E;6061 T6 aluminium extensions, shot peened and black anodised finish&#x3C;/p&#x3E;&#x3C;/li&#x3E;&#x3C;li&#x3E;&#x3C;p class=&#x22;&#x22; style=&#x22;white-space:pre-wrap;&#x22;&#x3E;6061 T6 aluminium extension clamps, CNC machined with black anodised finish&#x3C;/p&#x3E;&#x3C;/li&#x3E;&#x3C;li&#x3E;&#x3C;p class=&#x22;&#x22; style=&#x22;white-space:pre-wrap;&#x22;&#x3E;Injection molded arm cups, with press molded EVA foam pads&#x3C;/p&#x3E;&#x3C;/li&#x3E;&#x3C;li&#x3E;&#x3C;p class=&#x22;&#x22; style=&#x22;white-space:pre-wrap;&#x22;&#x3E;6061 T6 aluminium mounting components (Fit Kit), CNC machined with black anodised finish&#x3C;/p&#x3E;&#x3C;/li&#x3E;&#x3C;/ul&#x3E;
+                &#x3C;/div&#x3E;
+                &#x3C;div class=&#x22;tab__divider&#x22;&#x3E;&#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;`;
         },
         form: (counter) => {
             return `
@@ -425,16 +479,16 @@ $(document).ready(function () {
         const formCode = layouts[selectedLayout].form(lengthCard + 1);
         const layoutCode = layouts[selectedLayout].code(lengthCard + 1);
 
+        $(`#${containerId}`).html("");
         $(`#${containerId}`).append(formCode);
-
-        let layout_container_array = layout_container.trim().split("\n");
-        console.log("layout_container_array", layout_container_array);
-        for (let i = 0; i < layout_container.length; i++) {
-            if (layout_container_array[i] === "") {
-                layout_container_array.splice(i, 0, layoutCode);
-                break;
-            }
-        }
+        
+        let layout_container_array = [layoutCode];
+        // for (let i = 0; i < layout_container.length; i++) {
+        //     if (layout_container_array[i] === "") {
+        //         layout_container_array.splice(i, 0, layoutCode);
+        //         break;
+        //     }
+        // }
         $("code.html").html(layout_container_array.join("\n"));
         layout_container = layout_container_array.join("\n");
 
