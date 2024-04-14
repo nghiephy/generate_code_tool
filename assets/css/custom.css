@@ -146,6 +146,7 @@ p.c_9 {}
 
 .container {
    width: 1024px;
+   max-width: 100%;
    margin: 0 auto;
 }
 
@@ -174,14 +175,21 @@ p.c_9 {}
 }
 
 .modal-content .logo {
-    width: 400px;
-    margin: 0 auto;
-    margin-top: 20px;
+   position: relative;
+   width: 100%;
+   max-width: 300px;
+   padding-bottom: 14%;
+   margin: 0 auto;
+   margin-top: 20px;
 }
 
 .modal-content .logo img {
-    width: 100%;
-    object-fit: cover;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
 }
 
 .modal-content .modal-title {
@@ -191,4 +199,8 @@ p.c_9 {}
 
 #editor1 {
     min-height: 400px;
+}
+
+.ql-editor {
+   min-height: 150px;
 }

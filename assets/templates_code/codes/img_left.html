@@ -1,0 +1,65 @@
+<div class="code-template">
+    <div class="tab-content" id="tab-materials">
+        <div class="tab__divider"></div>
+        <div class="toggle-title">
+            <a class="toggleLink" data-collapsible="" href="#tab-materials-mobile" aria-label="Materials"
+                aria-controls="tab-materials-mobile" aria-expanded="false">
+                <span class="text">
+                    Materials
+                </span>
+                <span class="icon-plus">&nbsp;</span>
+            </a>
+        </div>
+        <div class="toggle-content" id="tab-materials-mobile" aria-hidden="true">
+            {{input_image${counter}}}
+            {{input_image${counter}_1}}
+        </div>
+        {{richtext_value${counter}_0}}
+    </div>
+</div>
+
+<div class="form-template">
+    <div class="card">
+        <div class="card-header" id="headingOne">
+            <h2 class="mb-0">
+                <button class="btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
+                    aria-expanded="true" aria-controls="collapseOne">
+                    Layout Image Left
+                </button>
+            </h2>
+            <div class="delete-btns" data-delete="${counter}">Delete</div>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#layoutImageBanner">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="input_image${counter}">Image</label>
+                    <input data-fields="${counter}" type="text" class="form-control form-genderator-code-img"
+                        id="input_image${counter}" placeholder="Example: https://placehold.it/960x900"
+                        oninput="genderator_code(this.value, 1)">
+                </div>
+                <div class="form-group">
+                    <label for="input_image${counter}_1">Image</label>
+                    <input data-fields="${counter}_1" type="text" class="form-control form-genderator-code-img"
+                        id="input_image${counter}_1" placeholder="Example: https://placehold.it/960x900"
+                        oninput="genderator_code(this.value, 1)">
+                </div>
+                <div class="form-group form-group-richtext" data-index-card="${counter}">
+                    <label for="input_title${counter}_0">Content</label>
+                    <div id="table-toolbar-${counter}_0" class="editor-table-toolbar">
+                        <button class="insert-table">Insert Table</button>
+                        <button class="insert-row-above">Insert Row Above</button>
+                        <button class="insert-row-below">Insert Row Below</button>
+                        <button class="insert-column-left">Insert Column Left</button>
+                        <button class="insert-column-right">Insert Column Right</button>
+                        <button class="delete-row">Delete Row</button>
+                        <button class="delete-column">Delete Column</button>
+                        <button class="delete-table">Delete Table</button>
+                    </div>
+                    <div id="editor${counter}_0"></div>
+                    <div data-fields="richtext_value${counter}_0" id="richtext_value${counter}_0"
+                        class="richtext_value${counter}_0" data=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

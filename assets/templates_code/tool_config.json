@@ -1,0 +1,18 @@
+[
+    {
+        "layout": "Image Left",
+        "code": "assets/templates_code/codes/img_left.html"
+    },
+    {
+        "layout": "Image Right",
+        "code": ""
+    },
+    {
+        "layout": "Image Full",
+        "code": ""
+    },
+    {
+        "layout": "Text Full",
+        "code": ""
+    }
+]
