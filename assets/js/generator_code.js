@@ -243,7 +243,8 @@ var layouts = {};
 
 function read_file() {
     return new Promise((resolve, reject) => {
-        var file = `/assets/templates_code/tool_config.json`;
+        const location = getLocationURL();
+        var file = `${location}/assets/templates_code/tool_config.json`;
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.open("GET", file, true);
         xmlhttp.onreadystatechange = function ()
@@ -255,16 +256,16 @@ function read_file() {
                     const layoutArr = JSON.parse(xmlhttp.responseText);
                     layoutArr.forEach((ele, index) => {
                         const layoutCode = ele.layout.toLowerCase().replace(/\s+/g, '_');
-                        $("#layout-selector").append(`<option value="${layoutCode}">${ele.layout}</option>`);
-                        const codeTemplateURL = ele.code;
-                        if (codeTemplateURL !== "") {
+                        const location = getLocationURL();
+                        const codeTemplateURL = `${location}/${ele.code}`;
+                        
+                        if (ele.code !== "") {
+                            $("#layout-selector").append(`<option value="${layoutCode}">${ele.layout}</option>`);
                             getTemplate(codeTemplateURL)
                                 .then(function (response) {
                                     const codeTemplate = $(".code-template", $(`<div>${response}</div>`)).html();
                                     const formTemplate = $(".form-template", $(`<div>${response}</div>`)).html();
                                     const codeTemplateEncoded = encode(codeTemplate);
-                                    console.log("codeTemplateEncoded", codeTemplateEncoded);
-                                    console.log("formTemplate", formTemplate);
                                     layouts[layoutCode] = {
                                         code: (counter = 0) => {
                                             return codeTemplateEncoded.replaceAll("${counter}", counter);
@@ -300,7 +301,6 @@ function encode(string) {
     }
 }
 
-
 function getTemplate(file) {
     return new Promise((resolve, reject) => {
         var xmlhttp = new XMLHttpRequest();
@@ -324,6 +324,7 @@ function getTemplate(file) {
 function genderator_click() {
     
 }
+
 function genderator_code(value, position) {
     var html = layout_container;
     $(".card").each(function (i) {
@@ -346,7 +347,19 @@ function genderator_code(value, position) {
     $("code.html").html(html);
 }
 
+function getLocationURL() {
+    var locationURL = window.location.pathname;
+    var locationArr = locationURL.split("/");
+    locationArr.pop();
+
+    var location = locationArr.join("/");
+
+    return location;
+
+}
+
 $(document).ready(function () {
+    getLocationURL();
     // genderator_code();
     read_file().then(function (response) {
         // Get container ID
@@ -357,7 +370,6 @@ $(document).ready(function () {
         $("code.html").html("Your code will be rendered here");
         $("#layout-selector").on("change", function (e) {
             const selectedLayout = this.value;
-            console.log("containerId", containerId);
             const formCode = layouts[selectedLayout].form();
             const layoutCode = layouts[selectedLayout].code();
             $(`#${containerId}`).append(formCode);
