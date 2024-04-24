@@ -155,7 +155,6 @@ p.c_9 {}
    border: 1px solid #888;
    border-bottom: 1px solid #888 !important;
    margin-bottom: 20px !important;
-   overflow: hidden;
 }
 
 .card-header {
@@ -193,7 +192,8 @@ p.c_9 {}
 }
 
 .modal-content .modal-title {
-    font-size: 20px;
+    font-size: 25px;
+    font-weight: bold;
     margin-top: 40px;
 }
 
@@ -203,4 +203,8 @@ p.c_9 {}
 
 .ql-editor {
    min-height: 150px;
+}
+
+.custom-select-lg {
+   height: calc(2.875rem + 10px);
 }

@@ -128,60 +128,40 @@ function handleChangeTemplate(layoutsTemplate, containerId) {
     formOptionRichtextEles.each((i, item) => {
         const dataIndexCard = $(item).data("index-card");
         if ($(`#editor${dataIndexCard}_${i}`).length) {
-            var quill = new Quill(`#editor${dataIndexCard}_${i}`, {
-                modules: {
-                    table: true,
-                    toolbar: toolbarOptions
-                },
-                theme: "snow",
+            // var quill = new Quill(`#editor${dataIndexCard}_${i}`, {
+            //     modules: {
+            //         table: true,
+            //         toolbar: toolbarOptions
+            //     },
+            //     theme: "snow",
+            // });
+            // quill.on("text-change", function () {
+            //     let content = quill.root.innerHTML
+            //         .replaceAll("<", "&#x3C;")
+            //         .replaceAll(">", "&#x3E;")
+            //         .replaceAll("   ", "&#x9;")
+            //         .replaceAll('"', "&#x22;");
+
+            //     $(`.richtext_value${dataIndexCard}_${i}`).attr("data", content);
+            //     genderator_code();
+            // });
+
+            $(`#editor${dataIndexCard}_${i}`).summernote({
+                placeholder: 'Enter Your Content Here',
+                tabsize: 2,
+                height: 200
             });
-            quill.on("text-change", function () {
-                let content = quill.root.innerHTML
-                    .replaceAll("<", "&#x3C;")
-                    .replaceAll(">", "&#x3E;")
-                    .replaceAll("   ", "&#x9;")
-                    .replaceAll('"', "&#x22;");
+
+            $(`#editor${dataIndexCard}_${i}`).on('summernote.change', function (we, contents, $editable) {
+                let content = contents.replaceAll("<", "&#x3C;")
+                        .replaceAll(">", "&#x3E;")
+                        .replaceAll("   ", "&#x9;")
+                        .replaceAll('"', "&#x22;");
 
                 $(`.richtext_value${dataIndexCard}_${i}`).attr("data", content);
                 genderator_code();
             });
         }
-
-        const table = quill.getModule('table');
-
-        $('.insert-table', $(item)).on('click', function (e) {
-            e.preventDefault();
-            $(`#editor${dataIndexCard}_${i} .ql-editor`).trigger('focus');
-            table.insertTable(2, 2);
-        });
-        $('.insert-row-above', $(item)).on('click', function (e) {
-            e.preventDefault();
-            table.insertRowAbove();
-        });
-        $('.insert-row-below', $(item)).on('click', function (e) {
-            e.preventDefault();
-            table.insertRowBelow();
-        });
-        $('.insert-column-left', $(item)).on('click', function (e) {
-            e.preventDefault();
-            table.insertColumnLeft();
-        });
-        $('.insert-column-right', $(item)).on('click', function (e) {
-            e.preventDefault();
-            table.insertColumnRight();
-        });
-        $('.delete-row', $(item)).on('click', function (e) {
-            e.preventDefault();
-            table.deleteRow();
-        });
-        $('.delete-column', $(item)).on('click', function (e) {
-            e.preventDefault();
-            table.deleteColumn();
-        });
-        $('.delete-table', $(item)).on('click', function (e) {
-            e.preventDefault();
-            table.deleteTable();
-        });
 
     })
 
